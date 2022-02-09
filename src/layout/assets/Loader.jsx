@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React from 'react'
 import { css } from "@emotion/react";
 import SpinnerLoader from "react-spinners/FadeLoader";
 
@@ -9,14 +9,11 @@ const override = css`
 `;
 
 
-export default function Loader() {
-  
-  let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#ffffff");
+export default function Loader({color,loading,size}) {
 
   return (
     <div className="MoonLoader">
-      <SpinnerLoader color={color} loading={loading} css={override} size={150} />
+      <SpinnerLoader color={color} loading={loading} css={override} size={size} />
     </div>
   
   )
